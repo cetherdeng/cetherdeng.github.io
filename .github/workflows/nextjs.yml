@@ -51,12 +51,8 @@ jobs:
         with:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-        with:
-          # Do not use enablement: true — it requires permissions the default token doesn't have.
-          # Enable Pages in repo Settings → Pages → Source: GitHub Actions.
-          static_site_generator: next
+      # Skip configure-pages: it requires Pages to already exist. Enable Pages in
+      # repo Settings → Pages → Source: GitHub Actions. next.config already has output: "export".
       - name: Restore cache
         uses: actions/cache@v4
         with:
