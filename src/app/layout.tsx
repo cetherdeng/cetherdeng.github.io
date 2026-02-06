@@ -1,14 +1,10 @@
 import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { ThemeProvider } from "../components/ThemeProvider";
-
-// Import FontAwesome CSS
-import "@fortawesome/fontawesome-svg-core/styles.css";
+import Sidebar from "../components/Sidebar";
 
 export const metadata: Metadata = {
-  title: "Andrew Shi",
-  description: "My personal space on the internet.",
+  title: "Cether Deng",
+  description: "Photography portfolio.",
 };
 
 export default function RootLayout({
@@ -17,11 +13,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={`${GeistSans.variable} antialiased`}>
-        <ThemeProvider>
-          {children}
-        </ThemeProvider>
+    <html lang="en">
+      <body>
+        <div className="app-shell">
+          <Sidebar />
+          <main className="main">{children}</main>
+        </div>
       </body>
     </html>
   );
