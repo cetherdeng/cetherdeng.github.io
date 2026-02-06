@@ -56,6 +56,8 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
+          # Enable GitHub Pages for this repo if not already enabled (fixes "Get Pages site failed")
+          enablement: true
           # Automatically inject basePath in your Next.js configuration file and disable
           # server side image optimization (https://nextjs.org/docs/api-reference/next/image#unoptimized).
           #
