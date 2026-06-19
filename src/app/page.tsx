@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useMemo } from "react";
+import { useState, useEffect } from "react";
 
 const ALL_IMAGES = [
   // Film
@@ -102,7 +102,11 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 export default function Home() {
-  const images = useMemo(() => shuffle(ALL_IMAGES), []);
+  const [images, setImages] = useState(ALL_IMAGES);
+
+  useEffect(() => {
+    setImages(shuffle(ALL_IMAGES));
+  }, []);
 
   return (
     <div className="masonry-grid">
