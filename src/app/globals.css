@@ -64,6 +64,10 @@ a:hover {
   white-space: nowrap;
 }
 
+.sidebar-logo:hover {
+  text-decoration: none;
+}
+
 .sidebar-nav {
   flex: 1;
 }

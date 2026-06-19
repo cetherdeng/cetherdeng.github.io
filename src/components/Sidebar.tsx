@@ -16,9 +16,9 @@ export default function Sidebar() {
   const year = new Date().getFullYear();
   return (
     <aside className="sidebar">
-      <Link href="/" className={`sidebar-logo ${script.className}`}>
+      <a href="/" className={`sidebar-logo ${script.className}`}>
         Cether Deng
-      </Link>
+      </a>
       <nav className="sidebar-nav" aria-label="Main">
         <ul className="sidebar-nav-list">
           {NAV_LINKS.map(({ href, label }) => (
